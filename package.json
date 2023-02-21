@@ -1,0 +1,81 @@
+{
+  "name": "nodejs-boilerplate",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "It's a boilerplate project with the settings we use as a backend developers to build APIs.",
+  "license": "MIT",
+  "main": "index.js",
+  "author": {
+    "name": "Jhonnar Rodriguez",
+    "email": "jhonnar.rodriguez@gmail.com"
+  },
+  "keywords": [
+    "NodeJS",
+    "TypeScript",
+    "ESLint",
+    "Prettier",
+    "AirBnb",
+    "Jest",
+    "Husky",
+    "Nodemon",
+    "Conventional Commits",
+    "Deployment Pipeline"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.prod.json",
+    "start": "node --inspect=5858 -r ts-node/register ./src/index.ts",
+    "start:prod": "cross-env NODE_ENV=production npm run build && node ./dist/index.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon --inspect=5858",
+    "lint": "eslint . --ext .ts --cache",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "test": "cross-env NODE_ENV=test jest --coverage --verbose --forceExit --detectOpenHandles",
+    "test:coverage": "cross-env NODE_ENV=test jest --verbose --forceExit --detectOpenHandles",
+    "test:watch": "cross-env NODE_ENV=test jest --watch --forceExit --detectOpenHandles",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv-safe": "^8.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@jest/globals": "^29.4.3",
+    "@types/dotenv-safe": "^8.1.2",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.0",
+    "@types/request": "^2.48.8",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.3",
+    "jest": "^29.4.3",
+    "lint-staged": "^13.1.2",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.4",
+    "request": "^2.88.2",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^4.9.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

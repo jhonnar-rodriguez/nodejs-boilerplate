@@ -1,0 +1,76 @@
+{
+    "root": true,
+    "env": {
+        "browser": false,
+        "node": true,
+        "es6": true,
+        "jest": true,
+        "jest/globals": true
+    },
+    "extends": [
+        "airbnb-base",
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:eslint-comments/recommended",
+        "plugin:jest/recommended",
+        "plugin:promise/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint",
+        "eslint-comments",
+        "jest",
+        "promise",
+        "import",
+        "prettier"
+    ],
+    "parserOptions": {
+        "project": "./tsconfig.eslint.json"
+    },
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "/built/**",
+        "/tests/**",
+        "/__tests__/**",
+        "/lib/**",
+        "/src/lib/*.generated.d.ts",
+        "/scripts/**/*.js",
+        "/scripts/**/*.d.*",
+        "/internal/**",
+        "/coverage/**"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        "import/prefer-default-export": "off",
+        "import/no-default-export": "error",
+        "no-use-before-define": [
+            "error",
+            {
+                "functions": false,
+                "classes": true,
+                "variables": true
+            }
+        ],
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-use-before-define": [
+            "error",
+            {
+                "functions": false,
+                "classes": true,
+                "variables": true,
+                "typedefs": true
+            }
+        ],
+        "import/no-extraneous-dependencies": "off",
+        "no-console": "warn"
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true,
+                "project": "./tsconfig.json"
+            }
+        }
+    }
+}

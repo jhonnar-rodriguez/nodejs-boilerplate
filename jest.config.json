@@ -1,0 +1,10 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "setupFiles": ["dotenv-safe/config"],
+  "moduleFileExtensions": ["ts", "js"],
+  "transform": {
+    "^.+\\.(ts)$": "ts-jest"
+  },
+  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts?$"
+}
